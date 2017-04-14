@@ -12,6 +12,7 @@ public class Day_Night : MonoBehaviour
 
     void Start()
     {
+        // At first, we check the time in which we are playing
         myColor = shadow.color;
         if ((System.DateTime.Now.Hour >= 0 && System.DateTime.Now.Hour < 8) || (System.DateTime.Now.Hour >= 20))
         {
@@ -21,6 +22,7 @@ public class Day_Night : MonoBehaviour
         {
             isDay = true;
         }
+        // We set the shadow transparency (To simulate a bit more the day or the night)
         if (isDay)
         {
             myColor = shadow.color;
@@ -38,6 +40,7 @@ public class Day_Night : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // If we have passed from day to night or night to day, put or take off the transparency gradually
         if (!this.isDay.Equals(Proceduralcreation.day))
         {
             if (Proceduralcreation.day)
